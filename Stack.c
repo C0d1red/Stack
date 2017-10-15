@@ -4,19 +4,8 @@
 int stack[100];
 int nomer = 0;
 
-int push(int k)
-{
-    int element = k;
-    stack[nomer] = element;
-    return nomer++;
-}
-
-int pop(int nomer)
-{
-    printf("ELEMENT DELETED: NOMER(%d), CHISLO:(%d)\n\n", nomer, stack[nomer]);
-    stack[nomer] = 0;
-    return nomer--;
-}
+void push(int);
+int pop(int);
 
 
 int main()
@@ -47,5 +36,19 @@ int main()
 
     return 0;
 }
+
+void push(int k)
+{
+    int element = k;
+    stack[nomer++] = element;
+}
+
+int pop(int nomer)
+{
+    printf("ELEMENT DELETED: NOMER(%d), CHISLO:(%d)\n\n", nomer, stack[nomer]);
+    return stack[--nomer];
+}
+
+
 
 
