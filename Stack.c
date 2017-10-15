@@ -5,7 +5,7 @@ int stack[100];
 int nomer = 0;
 
 void push(int);
-int pop(int);
+int pop();
 
 
 int main()
@@ -23,10 +23,10 @@ int main()
         printf("\n");
         break;
     case 2:
-        pop(--nomer);
+        pop();
         break;
     case 3:
-        for (count = 0; count<nomer; count++)
+        for (count = 1; count<nomer+1; count++)
         printf("ZNACH: %d\n", stack[count]);
         printf("\n");
         break;
@@ -40,13 +40,17 @@ int main()
 void push(int k)
 {
     int element = k;
-    stack[nomer++] = element;
+    stack[++nomer] = element;
 }
 
-int pop(int nomer)
+int pop()
 {
-    printf("ELEMENT DELETED: NOMER(%d), CHISLO:(%d)\n\n", nomer, stack[nomer]);
-    return stack[--nomer];
+    if (nomer>0){
+        printf("ELEMENT DELETED: NOMER(%d), CHISLO:(%d)\n\n", nomer, stack[nomer]);
+        return stack[--nomer];
+    }
+    else
+        printf("Error, stack is empty\n");
 }
 
 
