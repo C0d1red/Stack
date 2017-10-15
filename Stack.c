@@ -5,7 +5,7 @@ int stack[100];
 int nomer = 0;
 
 void push(int);
-int pop();
+int pop(void);
 
 
 int main()
