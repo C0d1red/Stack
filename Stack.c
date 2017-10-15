@@ -43,14 +43,16 @@ void push(int k)
     stack[++nomer] = element;
 }
 
-int pop()
+int pop(void)
 {
     if (nomer>0){
         printf("ELEMENT DELETED: NOMER(%d), CHISLO:(%d)\n\n", nomer, stack[nomer]);
         return stack[--nomer];
     }
-    else
+    else{
         printf("Error, stack is empty\n");
+        return stack[nomer];
+    }
 }
 
 
