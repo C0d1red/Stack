@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int stack[100];
-int nomer = 0;
+int nomer;
 
 void push(int);
 int pop(void);
